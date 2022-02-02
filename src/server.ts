@@ -1,4 +1,4 @@
-import { app } from './app';
+import { httpServer } from './app';
 
 process.on('uncaughtException', err => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -10,7 +10,7 @@ process.on('uncaughtException', err => {
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => {
+httpServer.listen(port, () => {
   console.log(`***** ${env.toUpperCase()} *****`);
   console.log(`✅ App running on port ${port} ✅`);
 });
